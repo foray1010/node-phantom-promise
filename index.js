@@ -48,4 +48,4 @@ function promisifyAll(target) {
   return promisifiedTarget
 }
 
-return promisifyAll(driver)
+module.exports = promisifyAll(driver)
