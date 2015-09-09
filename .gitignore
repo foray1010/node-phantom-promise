@@ -1,0 +1,14 @@
+# temporarily files
+## for Mac
+.DS_Store
+._*
+
+## for Windows
+Desktop.ini
+Thumbs.db
+
+# npm temporarily files
+npm-debug.log
+
+# Dependency directory
+node_modules

@@ -1,0 +1,33 @@
+{
+  "name": "node-phantom-promise",
+  "description": "A simple wrapper for baudehlo/node-phantom-simple with promise",
+  "version": "1.0.0",
+  "homepage": "https://github.com/foray1010/node-phantom-promise",
+  "author": {
+    "name": "foray1010"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foray1010/node-phantom-promise"
+  },
+  "bugs": {
+    "url": "https://github.com/foray1010/node-phantom-promise/issues"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "dependencies": {
+    "node-phantom-simple": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-aftership": "^1.1.2"
+  },
+  "keywords": [
+    "phantom",
+    "phantomjs",
+    "promise"
+  ],
+  "license": "MIT",
+  "private": false
+}

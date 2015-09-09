@@ -1,0 +1,21 @@
+extends: "aftership"
+rules:
+  ####################
+  # Stylistic Issues #
+  ####################
+  indent:
+    - 2
+    - 2
+    -
+      SwitchCase: 1
+  semi:
+    - 2
+    - "never"
+
+  ##########
+  # Legacy #
+  ##########
+  max-len:
+    - 2
+    - 100
+    - 2
