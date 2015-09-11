@@ -30,19 +30,18 @@ function genPromiseFunc(originalFunc) {
 }
 
 function promisifyAll(target) {
-  if (typeof target !== 'object' || Array.isArray(target)) {
+  if (typeof target !== 'object' || Array.isArray(target) || target === null) {
     return target
   }
 
   const promisifiedTarget = {}
 
   for (let targetPropName of Object.keys(target)) {
-    if (typeof target[targetPropName] !== 'function') {
-      promisifiedTarget[targetPropName] = target[targetPropName]
-      continue
-    }
+    const targetPropValue = target[targetPropName]
 
-    promisifiedTarget[targetPropName] = genPromiseFunc(target[targetPropName])
+    promisifiedTarget[targetPropName] = typeof targetPropValue === 'function' ?
+      genPromiseFunc(targetPropValue) :
+      targetPropValue
   }
 
   return promisifiedTarget
