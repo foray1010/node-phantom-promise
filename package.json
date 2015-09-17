@@ -1,7 +1,7 @@
 {
   "name": "node-phantom-promise",
   "description": "A simple wrapper for baudehlo/node-phantom-simple with promise",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/foray1010/node-phantom-promise",
   "author": {
     "name": "foray1010"
@@ -26,7 +26,9 @@
   "keywords": [
     "phantom",
     "phantomjs",
-    "promise"
+    "promise",
+    "slimer",
+    "slimerjs"
   ],
   "license": "MIT",
   "private": false
