@@ -24,8 +24,8 @@
     "eslint-config-aftership": "^1.1.2"
   },
   "keywords": [
-    "headless",
     "gecko",
+    "headless",
     "phantom",
     "phantomjs",
     "promise",
