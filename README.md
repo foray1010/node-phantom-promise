@@ -46,7 +46,7 @@ Refer to `Usage` in [baudehlo/node-phantom-simple](https://github.com/alexscheel
 2. the argument `err` is moved to `catch` of promise chain, the rest argument will be available in `then` of promise chain
 
 ## Example
-Highly recommended to use this with `co`
+Highly recommended to use this with [co](https://github.com/tj/co)
 ```js
 'use strict'
 
@@ -92,6 +92,53 @@ co(function* () {
 
   browser.exit()
 }).catch(function (err) {
+  console.error(err.stack)
+})
+```
+
+Or using ES7 `async`/`await` with [babel](https://github.com/babel/babel)
+```js
+import driver from 'node-phantom-promise'
+import phantomjs from 'phantomjs'
+import sleep from 'sleep-promise'
+
+!async function () {
+  const browser = await driver.create({path: phantomjs.path})
+
+  const page = await browser.createPage()
+
+  const status = await page.open('http://tilomitra.com/repository/screenscrape/ajax.html')
+
+  console.log('opened site? ', status)
+
+  await page.includeJs('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+
+  // jQuery Loaded.
+  // Wait for a bit for AJAX content to load on the page. Here, we are waiting 5 seconds.
+  await sleep(5000)
+
+  const result = await page.evaluate(function () {
+    // Get what you want from the page using jQuery. A good way is to populate an object with all the jQuery commands that you need and then return the object.
+    const h2Arr = []
+    const pArr = []
+
+    $('h2').each(function () {
+      h2Arr.push($(this).html())
+    })
+    $('p').each(function () {
+      pArr.push($(this).html())
+    })
+
+    return {
+      h2: h2Arr,
+      p: pArr
+    }
+  })
+
+  console.log(result)
+
+  browser.exit()
+}().catch(function (err) {
   console.error(err.stack)
 })
 ```
