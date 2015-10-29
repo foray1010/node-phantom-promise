@@ -37,7 +37,7 @@ before_script:
 ```
 
 ## Usage
-Refer to `Usage` in [baudehlo/node-phantom-simple](https://github.com/alexscheelmeyer/node-phantom/blob/master/README.md)
+Refer to `Usage` in [baudehlo/node-phantom-simple](https://github.com/baudehlo/node-phantom-simple/blob/master/README.md)
 
 ** Please be aware that
 
