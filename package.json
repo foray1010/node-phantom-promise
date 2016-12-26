@@ -21,7 +21,7 @@
     "node-phantom-simple": "^2.0.4"
   },
   "devDependencies": {
-    "eslint-config-aftership": "^1.1.2"
+    "eslint-config-aftership": "^3.2.1"
   },
   "keywords": [
     "gecko",
